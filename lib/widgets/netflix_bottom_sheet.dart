@@ -218,7 +218,7 @@ class NetflixBottomSheet extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     Navigator.pop(context);
-                    context.go('${GoRouter.of(context).location}/details',
+                    context.go('${GoRouter.of(context).overridePlatformDefaultLocation}/details',
                         extra: movieDetails);
                   },
                   child: Row(

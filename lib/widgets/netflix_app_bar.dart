@@ -24,7 +24,7 @@ class NetflixHeader extends SliverPersistentHeaderDelegate {
         status.state != AnimationStatus.reverse ? 1.0 : 0.0;
     final canPop = GoRouter.of(context).canPop();
 
-    final location = GoRouterState.of(context).location;
+    final location = GoRouterState.of(context).matchedLocation;
     final isTvShowsPage = location.contains('tvshows');
     final opacity = isTvShowsPage
         ? (status.state == AnimationStatus.completed ? 1.0 : 0.0)
@@ -227,7 +227,7 @@ class NetflixBottomHeader extends SliverPersistentHeaderDelegate {
         return previous != current;
       }),
       builder: (context, status) {
-        final location = GoRouterState.of(context).location;
+        final location = GoRouterState.of(context).matchedLocation;
         final isTvShowsPage = location.contains('tvshows');
         final opacity = isTvShowsPage
             ? (status == AnimationStatus.completed ? 1.0 : 0.0)

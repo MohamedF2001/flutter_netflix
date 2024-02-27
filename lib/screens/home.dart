@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void didChangeDependencies() {
-    if (GoRouterState.of(context).location != '/home/tvshows') {
+    if (GoRouterState.of(context).matchedLocation != '/home/tvshows') {
       context.read<AnimationStatusCubit>().onStatus(null);
     }
     super.didChangeDependencies();

@@ -18,7 +18,7 @@ class NewAndHotTile extends StatelessWidget {
     var date = movie.releaseDate ?? DateTime.now();
     return InkWell(
       onTap: () {
-        context.go('${GoRouterState.of(context).location}/details',
+        context.go('${GoRouterState.of(context).matchedLocation}/details',
             extra: movie);
       },
       child: Row(
